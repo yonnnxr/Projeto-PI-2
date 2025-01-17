@@ -7,51 +7,69 @@
     box-sizing: border-box;
 }
 
+/* Faz o menu ocupar a altura total da tela */
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.menu {
+    flex-grow: 1;
+}
+
 nav {
     background-color: rgba(50, 50, 50, 0.8);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(100px);
+    justify-content: space-between;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    align-items: center;  
     height: 100px;
+    width: 100%;
     padding: 0 20px;
 }
-  
+
 nav ul {
     display: flex;
-    gap: 30px;
 }
-  
+
 nav ul li {
     display: inline-flex;
     align-items: center;
     width: auto;
-    
 }
-  
+
 nav ul li a {
-    color: white;
+    color: #ACFD3E;
     text-decoration: none;
     font-family: "Bebas Neue", sans-serif;
     font-size: 40px;
     font-weight: bold;
     padding: 10px;
     line-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.material-symbols-outlined {
-    color:#aEFF40;
-    font-size: 50px;
-    
+.botao-person {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto; 
 }
-  
+
+.botao-person .material-symbols-outlined {
+   font-size: 40px;
+}
+
 .sidebar {
     background-color: #363535;
     color: white;
     width: 400px;
-    height: 903px;
+    height: 100vh; 
 }
-  
+
 .menu a {
     display: block;
     color: white;
@@ -62,24 +80,23 @@ nav ul li a {
     text-align: center;
     border-bottom: 1px solid #c0c0c0;
 }
-  
-  /* Estilos do Conteúdo Principal */
+
 .container {
     display: flex;
     font-family: Arial, sans-serif;
 }
-  
+
 .content {
     background-color: #f2f2f2;
     flex-grow: 1;
-    padding: 200px;
+    padding: 80px; 
 }
-  
+
 .user-profile {
     text-align: center;
     margin-bottom: 30px;
 }
-  
+
 .user-icon {
     width: 250px;
     height: 250px;
@@ -87,14 +104,129 @@ nav ul li a {
     background-color: #ccc;
     margin: 0 auto;
 }
-  
+
 .user-name {
     margin-top: 15px;
     font-size: 40px;
 }
-  
+
 .welcome-message {
     font-size: 100px;
     font-weight: bold;
     text-align: center;
+}
+
+/* Estilos para telas menores que 1333px de largura e 720px de altura */
+@media (max-width: 1333px) and (max-height: 720px) {
+  nav {
+    flex-direction: column;
+    align-items: center; 
+    height: auto; 
+  }
+
+  nav ul {
+    flex-direction: column; 
+    width: 100%; 
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    list-style: none;
+    margin: 10px 0; 
+  }
+
+  .imgvoucher {
+    margin: 0;
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+  }
+
+  .imgvoucher img {
+    max-width: 80%;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%; 
+    height: auto; 
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .user-icon {
+    width: 100px; 
+    height: 100px;
+  }
+
+  .user-name, .welcome-message {
+    font-size: 18px; 
+  }
+
+  .welcome-message {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+    /* Diminui a fonte do usuário e do welcome */
+    .user-name,
+    .welcome-message {
+      font-size: 20px; 
+    }
+
+    nav {
+      flex-direction: column; 
+      align-items: flex-start; 
+      height: auto; 
+    }
+  
+    nav ul {
+      flex-direction: column; 
+      width: 100%; 
+    }
+  
+    nav ul li {
+      width: 100%;
+    }
+  
+    .imgvoucher {
+      margin-right: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      height: auto;
+    }
+  
+    .content {
+      padding: 20px;
+    }
+  
+    .user-icon {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .user-name, .welcome-message {
+      font-size: 24px;
+    }
+  
+    .welcome-message {
+      font-size: 36px;
+    }
 }
